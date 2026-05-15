@@ -20,7 +20,7 @@
   .price { font-size: 28px; font-weight: 600; color: var(--white); }
   .change-pos { font-size: 14px; font-weight: 500; color: var(--green); background: rgba(62,207,142,0.12); padding: 3px 10px; border-radius: 20px; }
   .meta-badge { font-size: 12px; color: var(--text2); background: rgba(255,255,255,0.05); border: 1px solid var(--border); border-radius: 6px; padding: 4px 10px; }
-  .verdict-badge { font-size: 13px; font-weight: 600; background: rgba(62,207,142,0.12); border: 1px solid rgba(62,207,142,0.35); color: var(--green); border-radius: 6px; padding: 6px 16px; }
+  .verdict-badge { font-size: 13px; font-weight: 600; background: rgba(240,93,93,0.12); border: 1px solid rgba(240,93,93,0.4); color: #ff7070; border-radius: 6px; padding: 6px 16px; }
   .content { max-width: 1100px; margin: 0 auto; padding: 32px 24px; }
   .section { margin-bottom: 36px; }
   .section-title { font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: 1.5px; color: var(--text2); margin-bottom: 16px; padding-bottom: 10px; border-bottom: 1px solid var(--border); display: flex; align-items: center; gap: 8px; }
@@ -30,7 +30,8 @@
   .chart-caption { padding: 10px 16px; font-size: 12px; color: var(--text2); border-top: 1px solid var(--border); }
   .schema-container { background: var(--bg2); border: 1px solid var(--border); border-radius: 10px; padding: 24px; }
   .levels-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px; }
-  .level-card { background: var(--bg2); border: 1px solid var(--border); border-radius: 10px; padding: 14px 16px; }
+  .level-card { background: var(--bg2); border: 1px solid var(--border); border-radius: 10px; padding: 14px 16px; transition: border-color 0.2s; }
+  .level-card:hover { border-color: rgba(255,255,255,0.18); }
   .level-label { font-size: 11px; text-transform: uppercase; letter-spacing: 1px; font-weight: 600; color: var(--text2); margin-bottom: 6px; }
   .level-value { font-size: 22px; font-weight: 700; }
   .level-sub { font-size: 11px; color: var(--text2); margin-top: 3px; }
@@ -39,7 +40,7 @@
   .level-card.target1 .level-value { color: var(--orange); }
   .level-card.target2 .level-value { color: var(--green); }
   .level-card.bottom .level-value { color: var(--text2); }
-  .level-card.anse .level-value { color: var(--purple); }
+  .level-card.resist .level-value { color: #ff7070; }
   .analysis-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
   @media (max-width: 700px) { .analysis-grid { grid-template-columns: 1fr; } }
   .analysis-card { background: var(--bg2); border: 1px solid var(--border); border-radius: 10px; padding: 18px 20px; }
@@ -61,25 +62,26 @@
   .scenario-table th { font-size: 11px; text-transform: uppercase; letter-spacing: 1px; font-weight: 600; color: var(--text2); text-align: left; padding: 8px 12px; border-bottom: 1px solid var(--border); }
   .scenario-table td { font-size: 13px; color: var(--text); padding: 10px 12px; border-bottom: 1px solid rgba(255,255,255,0.04); }
   .scenario-table tr:last-child td { border-bottom: none; }
-  .scenario-table tr.active td { background: rgba(62,207,142,0.05); }
+  .scenario-table tr.active td { background: rgba(240,93,93,0.06); }
   .badge { font-size: 11px; font-weight: 600; padding: 2px 8px; border-radius: 10px; display: inline-block; }
   .badge-bull { background: rgba(62,207,142,0.15); color: var(--green); }
   .badge-neutral { background: rgba(255,255,255,0.08); color: var(--text2); }
-  .badge-active { background: rgba(247,216,124,0.18); color: var(--yellow); }
-  .badge-progress { background: rgba(167,139,250,0.18); color: var(--purple); }
+  .badge-active { background: rgba(240,93,93,0.18); color: #ff7070; }
+  .badge-warn { background: rgba(247,216,124,0.18); color: var(--yellow); }
   .alert-box { background: rgba(245,166,35,0.08); border: 1px solid rgba(245,166,35,0.25); border-radius: 8px; padding: 12px 16px; font-size: 13px; color: var(--text); line-height: 1.6; display: flex; gap: 10px; align-items: flex-start; }
+  .alert-red { background: rgba(240,93,93,0.08); border: 1px solid rgba(240,93,93,0.3); }
   .alert-green { background: rgba(62,207,142,0.08); border: 1px solid rgba(62,207,142,0.25); }
   .alert-blue { background: rgba(91,141,239,0.08); border: 1px solid rgba(91,141,239,0.25); }
   .timeline { display: flex; flex-direction: column; gap: 0; border-left: 2px solid var(--border); margin-left: 12px; padding-left: 20px; }
   .tl-item { position: relative; padding: 0 0 20px; }
   .tl-item::before { content: ''; position: absolute; left: -27px; top: 4px; width: 10px; height: 10px; border-radius: 50%; border: 2px solid var(--bg2); }
   .tl-item.done::before { background: var(--green); }
-  .tl-item.active::before { background: var(--yellow); box-shadow: 0 0 8px var(--yellow); }
+  .tl-item.active::before { background: #ff7070; box-shadow: 0 0 10px rgba(240,93,93,0.6); }
   .tl-item.soon::before { background: var(--orange); }
   .tl-item.future::before { background: var(--border); }
   .tl-date { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 4px; }
   .tl-item.done .tl-date { color: var(--green); }
-  .tl-item.active .tl-date { color: var(--yellow); }
+  .tl-item.active .tl-date { color: #ff7070; }
   .tl-item.soon .tl-date { color: var(--orange); }
   .tl-item.future .tl-date { color: var(--text2); }
   .tl-text { font-size: 13px; color: var(--text); line-height: 1.5; }
@@ -104,7 +106,7 @@
   <div style="display:flex;flex-direction:column;align-items:flex-end;gap:8px">
     <div class="meta-badge">Dernier tick : 15 Mai 2026 · Graphique Hebdo</div>
     <div class="meta-badge">Indicateurs : SMA20/50/100 · Ichimoku · Bollinger · MACD</div>
-    <div class="verdict-badge">⚡ Tasse avec Anse — Anse en cours · Neckline ~4,21 €</div>
+    <div class="verdict-badge">🚨 Breakout en cours — Cours = Neckline ~3,67 €</div>
   </div>
 </div>
 
@@ -119,34 +121,43 @@
     </div>
   </div>
 
+  <!-- ALERTE BREAKOUT -->
+  <div class="section">
+    <div class="section-title">Signal du jour</div>
+    <div class="alert-box alert-red">
+      <span style="font-size:18px;flex-shrink:0">🚨</span>
+      <span>Le cours est à <strong>3,675 €</strong> — soit pile sur la <strong>neckline de la tasse (~3,67 €)</strong>. Le +4,55 % aujourd'hui pourrait être la <strong>bougie de breakout</strong> de la figure. Surveiller la clôture hebdomadaire : une clôture au-dessus de 3,67 € <strong>valide la figure</strong> et ouvre la route vers 5,13 € puis ~6,09 €.</span>
+    </div>
+  </div>
+
   <!-- NIVEAUX -->
   <div class="section">
     <div class="section-title">Niveaux clés identifiés</div>
     <div class="levels-grid">
       <div class="level-card current">
-        <div class="level-label">Cours actuel</div>
+        <div class="level-label">Cours actuel = Neckline</div>
         <div class="level-value">3,675 €</div>
-        <div class="level-sub">Anse en sortie · +4,55 %</div>
+        <div class="level-sub">⚡ Breakout potentiel aujourd'hui</div>
       </div>
       <div class="level-card bottom">
         <div class="level-label">Fond de tasse</div>
         <div class="level-value">~1,25 €</div>
-        <div class="level-sub">Sept.–Oct. 2025 · Creux validé</div>
-      </div>
-      <div class="level-card anse">
-        <div class="level-label">Zone anse</div>
-        <div class="level-value">~3,0–4,21 €</div>
-        <div class="level-sub">Mars–Mai 2026 · En cours</div>
-      </div>
-      <div class="level-card">
-        <div class="level-label">Golden Ratio (61,8 %)</div>
-        <div class="level-value">3,27 €</div>
-        <div class="level-sub">Support clé · Tient pour l'instant</div>
+        <div class="level-sub">Oct. 2025 · Creux validé</div>
       </div>
       <div class="level-card neckline">
-        <div class="level-label">Neckline — Signal clé</div>
-        <div class="level-value">~4,21 €</div>
-        <div class="level-sub">Ligne rouge horizontale · Breakout ici</div>
+        <div class="level-label">Neckline — Les deux bords</div>
+        <div class="level-value">~3,67 €</div>
+        <div class="level-sub">Bord G. Août 2025 = Bord D. Mai 2026</div>
+      </div>
+      <div class="level-card">
+        <div class="level-label">Support Golden Ratio</div>
+        <div class="level-value">3,27 €</div>
+        <div class="level-sub">Fib 61,8 % · Support anse tenu</div>
+      </div>
+      <div class="level-card target1">
+        <div class="level-label">Résistance post-breakout</div>
+        <div class="level-value">4,21 €</div>
+        <div class="level-sub">Ex-plus-haut Fév. 2026 · Étape 1</div>
       </div>
       <div class="level-card target1">
         <div class="level-label">Cible 1 — Fib 100 %</div>
@@ -155,137 +166,139 @@
       </div>
       <div class="level-card target2">
         <div class="level-label">Cible 2 — Projection tasse</div>
-        <div class="level-value">~7,0–7,4 €</div>
-        <div class="level-sub">Neckline + hauteur tasse</div>
+        <div class="level-value">~6,09 €</div>
+        <div class="level-sub">Neckline 3,67 + hauteur 2,42</div>
       </div>
     </div>
   </div>
 
   <!-- SCHÉMA -->
   <div class="section">
-    <div class="section-title">Schéma annoté — Tasse avec Anse (Août 2025 → ?)</div>
+    <div class="section-title">Schéma annoté — Tasse avec Anse</div>
     <div class="schema-container">
-      <div style="font-size:13px;font-weight:600;color:var(--text2);text-transform:uppercase;letter-spacing:1px;margin-bottom:16px">📐 Tasse Août 2025 → Fév. 2026 · Anse Mars–Mai 2026</div>
-      <svg width="100%" viewBox="0 0 880 340" role="img">
-        <title>Schéma tasse avec anse THX Pharma</title>
+      <div style="font-size:13px;font-weight:600;color:var(--text2);text-transform:uppercase;letter-spacing:1px;margin-bottom:16px">📐 Neckline ~3,67 € · Cours actuel = Breakout potentiel</div>
+      <svg width="100%" viewBox="0 0 880 350" role="img">
+        <title>Schéma tasse avec anse THX Pharma — neckline 3,67 €</title>
         <defs>
           <marker id="arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
             <path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
           </marker>
         </defs>
-        <rect x="0" y="0" width="880" height="340" fill="#171b26" rx="8"/>
+        <rect x="0" y="0" width="880" height="350" fill="#171b26" rx="8"/>
 
         <!-- Grilles -->
-        <line x1="30" y1="50" x2="850" y2="50" stroke="rgba(255,255,255,0.04)" stroke-width="1"/>
-        <line x1="30" y1="100" x2="850" y2="100" stroke="rgba(255,255,255,0.04)" stroke-width="1"/>
-        <line x1="30" y1="150" x2="850" y2="150" stroke="rgba(255,255,255,0.04)" stroke-width="1"/>
-        <line x1="30" y1="200" x2="850" y2="200" stroke="rgba(255,255,255,0.04)" stroke-width="1"/>
-        <line x1="30" y1="250" x2="850" y2="250" stroke="rgba(255,255,255,0.04)" stroke-width="1"/>
+        <line x1="30" y1="45" x2="850" y2="45" stroke="rgba(255,255,255,0.04)" stroke-width="1"/>
+        <line x1="30" y1="95" x2="850" y2="95" stroke="rgba(255,255,255,0.04)" stroke-width="1"/>
+        <line x1="30" y1="145" x2="850" y2="145" stroke="rgba(255,255,255,0.04)" stroke-width="1"/>
+        <line x1="30" y1="195" x2="850" y2="195" stroke="rgba(255,255,255,0.04)" stroke-width="1"/>
+        <line x1="30" y1="245" x2="850" y2="245" stroke="rgba(255,255,255,0.04)" stroke-width="1"/>
+        <line x1="30" y1="295" x2="850" y2="295" stroke="rgba(255,255,255,0.04)" stroke-width="1"/>
 
         <!-- Prix axe Y -->
-        <text x="25" y="54"  fill="#9095a8" font-size="10" text-anchor="end" font-family="SF Pro Display,sans-serif">7,0</text>
-        <text x="25" y="104" fill="#9095a8" font-size="10" text-anchor="end" font-family="SF Pro Display,sans-serif">5,13</text>
-        <text x="25" y="154" fill="#9095a8" font-size="10" text-anchor="end" font-family="SF Pro Display,sans-serif">4,21</text>
-        <text x="25" y="204" fill="#9095a8" font-size="10" text-anchor="end" font-family="SF Pro Display,sans-serif">3,27</text>
-        <text x="25" y="254" fill="#9095a8" font-size="10" text-anchor="end" font-family="SF Pro Display,sans-serif">1,25</text>
+        <text x="25" y="49"  fill="#9095a8" font-size="10" text-anchor="end" font-family="SF Pro Display,sans-serif">6,09</text>
+        <text x="25" y="99"  fill="#9095a8" font-size="10" text-anchor="end" font-family="SF Pro Display,sans-serif">5,13</text>
+        <text x="25" y="149" fill="#9095a8" font-size="10" text-anchor="end" font-family="SF Pro Display,sans-serif">4,21</text>
+        <text x="25" y="199" fill="#f05d5d" font-size="10" text-anchor="end" font-family="SF Pro Display,sans-serif" font-weight="600">3,67</text>
+        <text x="25" y="249" fill="#9095a8" font-size="10" text-anchor="end" font-family="SF Pro Display,sans-serif">3,27</text>
+        <text x="25" y="299" fill="#9095a8" font-size="10" text-anchor="end" font-family="SF Pro Display,sans-serif">1,25</text>
 
-        <!-- Fib 100% ligne pointillée orange -->
-        <line x1="30" y1="100" x2="850" y2="100" stroke="#f5a623" stroke-width="0.8" stroke-dasharray="4 4" opacity="0.5"/>
-        <!-- Neckline rouge -->
-        <line x1="30" y1="154" x2="850" y2="154" stroke="#f05d5d" stroke-width="1.2" stroke-dasharray="6 4"/>
-        <!-- Objectif zone verte -->
-        <rect x="660" y="38" width="200" height="22" fill="rgba(62,207,142,0.07)" rx="3"/>
+        <!-- Fib 100% orange -->
+        <line x1="30" y1="95" x2="850" y2="95" stroke="#f5a623" stroke-width="0.8" stroke-dasharray="4 4" opacity="0.5"/>
+        <!-- 4,21 résistance post-breakout -->
+        <line x1="30" y1="149" x2="850" y2="149" stroke="rgba(255,112,112,0.4)" stroke-width="0.8" stroke-dasharray="4 4"/>
+        <!-- NECKLINE rouge forte -->
+        <line x1="30" y1="199" x2="850" y2="199" stroke="#f05d5d" stroke-width="1.5" stroke-dasharray="6 4"/>
+        <!-- Golden ratio teal -->
+        <line x1="30" y1="249" x2="850" y2="249" stroke="#38d4be" stroke-width="0.8" stroke-dasharray="3 4" opacity="0.5"/>
+
+        <!-- Zone objectif -->
+        <rect x="680" y="33" width="185" height="22" fill="rgba(62,207,142,0.07)" rx="3"/>
 
         <!-- ═══ TASSE (bleu) ═══ -->
-        <!-- Bord gauche (Août 2025 → descente vers le fond) -->
-        <path d="M 130 154 C 165 154 200 220 235 254"
+        <!-- Bord gauche Aug 2025 → fond (descente de 3,67 → 1,25) -->
+        <path d="M 155 199 C 190 199 225 265 260 299"
               fill="none" stroke="#5b8def" stroke-width="2.5" stroke-linecap="round"/>
-        <!-- Fond arrondi -->
-        <path d="M 235 254 Q 340 272 445 254"
+        <!-- Fond arrondi (1,25 €) -->
+        <path d="M 260 299 Q 370 315 480 299"
               fill="none" stroke="#5b8def" stroke-width="2.5" stroke-linecap="round"/>
-        <!-- Paroi droite remonte jusqu'à neckline (Fév 2026) -->
-        <path d="M 445 254 C 478 254 520 200 555 154"
+        <!-- Paroi droite → remonte vers neckline 3,67 € -->
+        <path d="M 480 299 C 512 299 550 250 580 199"
               fill="none" stroke="#5b8def" stroke-width="2.5" stroke-linecap="round"/>
 
         <!-- ═══ ANSE (violet) ═══ -->
-        <!-- Repli depuis neckline vers ~3,27 (Golden Ratio = support) -->
-        <path d="M 555 154 C 572 154 588 178 600 200 C 610 216 618 224 624 230"
+        <!-- Repli depuis neckline → ~3,27 € (golden ratio) -->
+        <path d="M 580 199 C 596 199 610 222 622 244 C 630 256 635 262 640 268"
               fill="none" stroke="#a78bfa" stroke-width="2.2" stroke-linecap="round"/>
-        <!-- Rechargement → cours actuel ~3,675 -->
-        <path d="M 624 230 C 632 224 645 212 662 204"
+        <!-- Rechargement → cours actuel = neckline 3,67 € -->
+        <path d="M 640 268 C 648 260 662 240 680 199"
               fill="none" stroke="#a78bfa" stroke-width="2.2" stroke-linecap="round"/>
-        <!-- Projection vers neckline (pointillé) -->
-        <path d="M 662 204 C 676 188 695 168 715 154"
-              fill="none" stroke="#a78bfa" stroke-width="1.8" stroke-dasharray="5 4" opacity="0.6" stroke-linecap="round"/>
-        <!-- Breakout flèche verte -->
-        <path d="M 715 154 L 750 154 L 750 50"
-              fill="none" stroke="#3ecf8e" stroke-width="2" stroke-linecap="round" marker-end="url(#arr)" opacity="0.85"/>
 
-        <!-- Ligne double cible -->
-        <line x1="820" y1="54" x2="820" y2="150" stroke="#3ecf8e" stroke-width="0.8" stroke-dasharray="3 3" opacity="0.4"/>
+        <!-- ═══ BREAKOUT (flèche rouge vif — en cours) ═══ -->
+        <!-- Breakout de la neckline vers 4,21 puis objectifs -->
+        <path d="M 680 199 L 720 199 L 720 45"
+              fill="none" stroke="#3ecf8e" stroke-width="2.2" stroke-linecap="round" marker-end="url(#arr)" opacity="0.9"/>
+
+        <!-- Pulse sur le breakout -->
+        <circle cx="680" cy="199" r="8" fill="none" stroke="#f05d5d" stroke-width="1.5" opacity="0.4"/>
+        <circle cx="680" cy="199" r="14" fill="none" stroke="#f05d5d" stroke-width="0.8" opacity="0.2"/>
 
         <!-- Étiquettes temporelles -->
-        <text x="132" y="314" fill="#9095a8" font-size="9" text-anchor="middle" font-family="SF Pro Display,sans-serif">Août 2025</text>
-        <text x="340" y="314" fill="#9095a8" font-size="9" text-anchor="middle" font-family="SF Pro Display,sans-serif">Oct.–Nov. 2025</text>
-        <text x="555" y="314" fill="#9095a8" font-size="9" text-anchor="middle" font-family="SF Pro Display,sans-serif">Fév. 2026</text>
-        <text x="662" y="314" fill="#f7d87c" font-size="9" text-anchor="middle" font-family="SF Pro Display,sans-serif" font-weight="600">Mai 2026</text>
-        <text x="750" y="314" fill="#3ecf8e" font-size="9" text-anchor="middle" font-family="SF Pro Display,sans-serif">?? 2026</text>
+        <text x="157" y="325" fill="#9095a8" font-size="9" text-anchor="middle" font-family="SF Pro Display,sans-serif">Août 2025</text>
+        <text x="370" y="325" fill="#9095a8" font-size="9" text-anchor="middle" font-family="SF Pro Display,sans-serif">Oct.–Nov. 2025</text>
+        <text x="580" y="325" fill="#9095a8" font-size="9" text-anchor="middle" font-family="SF Pro Display,sans-serif">Fév.–Mars 2026</text>
+        <text x="680" y="325" fill="#f05d5d" font-size="9" text-anchor="middle" font-family="SF Pro Display,sans-serif" font-weight="700">15 Mai 2026 ⚡</text>
+        <text x="720" y="325" fill="#3ecf8e" font-size="9" text-anchor="middle" font-family="SF Pro Display,sans-serif">?? 2026</text>
 
-        <!-- Lignes vert. dates -->
-        <line x1="132" y1="300" x2="132" y2="308" stroke="#9095a8" stroke-width="0.5"/>
-        <line x1="340" y1="300" x2="340" y2="308" stroke="#9095a8" stroke-width="0.5"/>
-        <line x1="555" y1="300" x2="555" y2="308" stroke="#9095a8" stroke-width="0.5"/>
-        <line x1="662" y1="300" x2="662" y2="308" stroke="#f7d87c" stroke-width="0.5"/>
-        <line x1="750" y1="300" x2="750" y2="308" stroke="#3ecf8e" stroke-width="0.5"/>
+        <!-- Lignes verticales -->
+        <line x1="157" y1="312" x2="157" y2="320" stroke="#9095a8" stroke-width="0.5"/>
+        <line x1="370" y1="312" x2="370" y2="320" stroke="#9095a8" stroke-width="0.5"/>
+        <line x1="580" y1="312" x2="580" y2="320" stroke="#9095a8" stroke-width="0.5"/>
+        <line x1="680" y1="312" x2="680" y2="320" stroke="#f05d5d" stroke-width="1"/>
+        <line x1="720" y1="312" x2="720" y2="320" stroke="#3ecf8e" stroke-width="0.5"/>
 
         <!-- Points clés -->
-        <circle cx="130" cy="154" r="5" fill="#f05d5d" stroke="#171b26" stroke-width="2"/>
-        <circle cx="340" cy="263" r="5" fill="#9095a8" stroke="#171b26" stroke-width="2"/>
-        <circle cx="555" cy="154" r="5" fill="#f05d5d" stroke="#171b26" stroke-width="2"/>
-        <circle cx="624" cy="230" r="5" fill="#a78bfa" stroke="#171b26" stroke-width="2"/>
-        <circle cx="662" cy="204" r="6" fill="#f7d87c" stroke="#171b26" stroke-width="2"/>
-        <circle cx="715" cy="154" r="4" fill="#f05d5d" stroke="#171b26" stroke-width="2" opacity="0.5"/>
-        <circle cx="750" cy="154" r="4" fill="#3ecf8e" stroke="#171b26" stroke-width="2" opacity="0.7"/>
+        <circle cx="155" cy="199" r="5" fill="#f05d5d" stroke="#171b26" stroke-width="2"/>
+        <circle cx="370" cy="308" r="5" fill="#9095a8" stroke="#171b26" stroke-width="2"/>
+        <circle cx="580" cy="199" r="5" fill="#f05d5d" stroke="#171b26" stroke-width="2"/>
+        <circle cx="640" cy="268" r="5" fill="#a78bfa" stroke="#171b26" stroke-width="2"/>
+        <circle cx="680" cy="199" r="6" fill="#f05d5d" stroke="#171b26" stroke-width="2"/>
 
         <!-- Labels -->
-        <text x="118" y="143" fill="#f05d5d" font-size="9" text-anchor="middle" font-family="SF Pro Display,sans-serif">Bord G.</text>
-        <text x="118" y="153" fill="#f05d5d" font-size="9" text-anchor="middle" font-family="SF Pro Display,sans-serif">~4,21 €</text>
+        <text x="143" y="187" fill="#f05d5d" font-size="9" text-anchor="middle" font-family="SF Pro Display,sans-serif">Bord G.</text>
+        <text x="143" y="198" fill="#f05d5d" font-size="9" text-anchor="middle" font-family="SF Pro Display,sans-serif">~3,67 €</text>
 
-        <text x="340" y="281" fill="#9095a8" font-size="9" text-anchor="middle" font-family="SF Pro Display,sans-serif">Fond ~1,25 €</text>
+        <text x="370" y="326" fill="#9095a8" font-size="9" text-anchor="middle" font-family="SF Pro Display,sans-serif">Fond ~1,25 €</text>
 
-        <text x="555" y="143" fill="#f05d5d" font-size="9" text-anchor="middle" font-family="SF Pro Display,sans-serif">Bord D.</text>
-        <text x="555" y="153" fill="#f05d5d" font-size="9" text-anchor="middle" font-family="SF Pro Display,sans-serif">~4,21 €</text>
+        <text x="580" y="187" fill="#f05d5d" font-size="9" text-anchor="middle" font-family="SF Pro Display,sans-serif">Bord D.</text>
+        <text x="580" y="198" fill="#f05d5d" font-size="9" text-anchor="middle" font-family="SF Pro Display,sans-serif">~3,67 €</text>
 
-        <!-- Anse label -->
-        <rect x="527" y="240" width="108" height="18" fill="rgba(167,139,250,0.12)" rx="3"/>
-        <text x="581" y="252" fill="#a78bfa" font-size="9" text-anchor="middle" font-family="SF Pro Display,sans-serif" font-weight="600">Anse en cours ✓</text>
+        <!-- Creux anse label -->
+        <rect x="540" y="276" width="108" height="18" fill="rgba(167,139,250,0.12)" rx="3"/>
+        <text x="594" y="288" fill="#a78bfa" font-size="9" text-anchor="middle" font-family="SF Pro Display,sans-serif" font-weight="600">Creux anse ~3,27 €</text>
 
-        <!-- Cours actuel -->
-        <rect x="622" y="188" width="82" height="18" fill="rgba(247,216,124,0.12)" rx="3"/>
-        <text x="663" y="200" fill="#f7d87c" font-size="9" text-anchor="middle" font-family="SF Pro Display,sans-serif" font-weight="700">3,675 € →</text>
+        <!-- Breakout label -->
+        <rect x="620" y="183" width="112" height="18" fill="rgba(240,93,93,0.15)" rx="3"/>
+        <text x="676" y="195" fill="#ff7070" font-size="9" text-anchor="middle" font-family="SF Pro Display,sans-serif" font-weight="700">⚡ BREAKOUT 3,675 €</text>
 
         <!-- Labels Y droite -->
-        <text x="860" y="158" fill="#f05d5d" font-size="9" text-anchor="end" font-family="SF Pro Display,sans-serif" font-weight="600">Neckline ~4,21 €</text>
-        <text x="860" y="100" fill="#f5a623" font-size="9" text-anchor="end" font-family="SF Pro Display,sans-serif">Fib 100 % 5,13 €</text>
-        <text x="764" y="72" fill="#3ecf8e" font-size="9" text-anchor="start" font-family="SF Pro Display,sans-serif" font-weight="700">Objectif</text>
-        <text x="764" y="84" fill="#3ecf8e" font-size="9" text-anchor="start" font-family="SF Pro Display,sans-serif">~7,0–7,4 €</text>
-
-        <!-- Support 61.8% -->
-        <line x1="580" y1="200" x2="660" y2="200" stroke="#38d4be" stroke-width="0.8" stroke-dasharray="3 3" opacity="0.6"/>
-        <text x="578" y="199" fill="#38d4be" font-size="8" text-anchor="end" font-family="SF Pro Display,sans-serif">61,8 % 3,27 €</text>
+        <text x="858" y="203" fill="#f05d5d" font-size="9" text-anchor="end" font-family="SF Pro Display,sans-serif" font-weight="600">Neckline ~3,67 €</text>
+        <text x="858" y="99"  fill="#f5a623" font-size="9" text-anchor="end" font-family="SF Pro Display,sans-serif">Fib 100 % 5,13 €</text>
+        <text x="858" y="153" fill="rgba(255,112,112,0.7)" font-size="9" text-anchor="end" font-family="SF Pro Display,sans-serif">Résistance 4,21 €</text>
+        <text x="858" y="253" fill="#38d4be" font-size="9" text-anchor="end" font-family="SF Pro Display,sans-serif">Golden Ratio 3,27 €</text>
+        <text x="735" y="68" fill="#3ecf8e" font-size="9" text-anchor="start" font-family="SF Pro Display,sans-serif" font-weight="700">Objectif ~6,09 €</text>
 
         <!-- Légende -->
-        <rect x="30" y="326" width="820" height="1" fill="rgba(255,255,255,0.05)"/>
-        <line x1="45" y1="334" x2="68" y2="334" stroke="#5b8def" stroke-width="2"/>
-        <text x="73" y="338" fill="#9095a8" font-size="8" font-family="SF Pro Display,sans-serif">Tasse (confirmée)</text>
-        <line x1="198" y1="334" x2="220" y2="334" stroke="#a78bfa" stroke-width="2"/>
-        <text x="225" y="338" fill="#9095a8" font-size="8" font-family="SF Pro Display,sans-serif">Anse (en cours)</text>
-        <line x1="338" y1="334" x2="358" y2="334" stroke="#a78bfa" stroke-width="1.5" stroke-dasharray="4 3"/>
-        <text x="363" y="338" fill="#9095a8" font-size="8" font-family="SF Pro Display,sans-serif">Sortie anse (projection)</text>
-        <line x1="510" y1="334" x2="530" y2="334" stroke="#3ecf8e" stroke-width="2" marker-end="url(#arr)"/>
-        <text x="538" y="338" fill="#9095a8" font-size="8" font-family="SF Pro Display,sans-serif">Breakout + objectif</text>
-        <line x1="660" y1="334" x2="682" y2="334" stroke="#f05d5d" stroke-width="1.2" stroke-dasharray="5 3"/>
-        <text x="687" y="338" fill="#9095a8" font-size="8" font-family="SF Pro Display,sans-serif">Neckline 4,21 €</text>
+        <rect x="30" y="337" width="820" height="1" fill="rgba(255,255,255,0.05)"/>
+        <line x1="45" y1="345" x2="68" y2="345" stroke="#5b8def" stroke-width="2"/>
+        <text x="73" y="349" fill="#9095a8" font-size="8" font-family="SF Pro Display,sans-serif">Tasse (confirmée)</text>
+        <line x1="195" y1="345" x2="218" y2="345" stroke="#a78bfa" stroke-width="2"/>
+        <text x="223" y="349" fill="#9095a8" font-size="8" font-family="SF Pro Display,sans-serif">Anse (complète)</text>
+        <line x1="328" y1="345" x2="350" y2="345" stroke="#f05d5d" stroke-width="1.5" stroke-dasharray="5 3"/>
+        <text x="355" y="349" fill="#9095a8" font-size="8" font-family="SF Pro Display,sans-serif">Neckline 3,67 €</text>
+        <line x1="478" y1="345" x2="498" y2="345" stroke="#3ecf8e" stroke-width="2" marker-end="url(#arr)"/>
+        <text x="506" y="349" fill="#9095a8" font-size="8" font-family="SF Pro Display,sans-serif">Breakout + objectifs</text>
+        <line x1="635" y1="345" x2="657" y2="345" stroke="#f5a623" stroke-width="0.8" stroke-dasharray="4 3"/>
+        <text x="662" y="349" fill="#9095a8" font-size="8" font-family="SF Pro Display,sans-serif">Fib 100 % 5,13 €</text>
       </svg>
     </div>
   </div>
@@ -296,42 +309,44 @@
     <div class="analysis-grid">
 
       <div class="analysis-card">
-        <div class="analysis-card-title"><span class="dot dot-blue"></span>Structure de la tasse (Août → Fév.)</div>
+        <div class="analysis-card-title"><span class="dot dot-blue"></span>Structure de la tasse</div>
         <ul class="analysis-list">
-          <li><span class="hl-red">Bord gauche</span> : spike d'août 2025 à ~4,21 € (premier catalyseur) — bord gauche de la tasse.</li>
-          <li><span class="highlight">Fond arrondi</span> : creux de septembre–octobre 2025 autour de ~1,25 € — base de la figure.</li>
-          <li><span class="hl-red">Bord droit</span> : le spike de février 2026 revient exactement à ~4,21 € — symétrie des deux bords sur la neckline ✓</li>
-          <li>La tasse s'étale sur <span class="hl-blue">~6 mois</span> — durée classique, figure solide et bien proportionnée.</li>
+          <li><span class="hl-red">Bord gauche</span> : spike d'août 2025 à <span class="hl-red">~3,67 €</span> — premier catalyseur, premier pic.</li>
+          <li><span class="highlight">Fond arrondi</span> : creux d'octobre 2025 à <span class="highlight">~1,25 €</span> — base solide de la figure.</li>
+          <li><span class="hl-red">Bord droit</span> : remontée progressive jusqu'à <span class="hl-red">~3,67 €</span> en mai 2026 — symétrie des deux bords ✓</li>
+          <li>La tasse dure <span class="hl-blue">~9 mois</span> (Août 2025 → Mai 2026) — figure bien construite et mûre.</li>
+          <li>Le <span class="hl-orange">4,21 €</span> (pic Fév. 2026) était un dépassement de la neckline lors du bord droit — sera maintenant la <strong>première résistance post-breakout</strong>.</li>
         </ul>
       </div>
 
       <div class="analysis-card">
-        <div class="analysis-card-title"><span class="dot dot-purple"></span>L'anse — Mars à Mai 2026</div>
+        <div class="analysis-card-title"><span class="dot dot-purple"></span>L'anse et le signal du jour</div>
         <ul class="analysis-list">
-          <li>Après le bord droit à 4,21 €, repli normal vers ~3,0 € (mars 2026) — c'est l'anse.</li>
-          <li>Le <span class="hl-blue">Golden Ratio 61,8 % à 3,27 €</span> a servi de support au creux de l'anse.</li>
-          <li>Le rechargement actuel à <span class="highlight">3,675 € (+4,55 %)</span> marque la sortie de l'anse par le haut.</li>
-          <li>La figure est <span class="hl-purple">~80 % complète</span> — il manque uniquement le breakout des 4,21 €.</li>
+          <li>Après le bord droit, repli normal vers le <span class="hl-blue">Golden Ratio 3,27 €</span> — support tenu, anse propre.</li>
+          <li>Le rechargement depuis 3,27 € ramène le cours à <span class="highlight">3,675 €</span> — soit exactement la neckline.</li>
+          <li>Le <span class="hl-red">+4,55 % aujourd'hui</span> positionne le cours sur la neckline : c'est potentiellement la <strong>bougie de breakout</strong>.</li>
+          <li>Confirmation nécessaire : <span class="hl-green">clôture hebdomadaire au-dessus de 3,67 €</span> avec des volumes.</li>
         </ul>
       </div>
 
       <div class="analysis-card">
         <div class="analysis-card-title"><span class="dot dot-green"></span>Calcul des objectifs</div>
         <ul class="analysis-list">
-          <li>Hauteur tasse = <span class="hl-red">4,21 €</span> (neckline) − <span class="highlight">1,25 €</span> (fond) = <span class="hl-green">~3,0 pts</span></li>
-          <li><span class="hl-orange">Cible 1</span> = 4,21 + 3,0 = <span class="hl-orange">~7,2 €</span></li>
-          <li>Étape intermédiaire naturelle : <span class="hl-blue">Fib 100 % à 5,13 €</span> — première résistance majeure à absorber.</li>
-          <li>Potentiel depuis le cours actuel : <span class="hl-green">+96 %</span> vers 7,2 € si la figure se réalise intégralement.</li>
+          <li>Hauteur = <span class="hl-red">3,67 €</span> (neckline) − <span class="highlight">1,25 €</span> (fond) = <span class="hl-green">2,42 pts</span></li>
+          <li><span class="hl-green">Objectif principal</span> = 3,67 + 2,42 = <span class="hl-green">~6,09 €</span></li>
+          <li><span class="hl-orange">Étape 1</span> : résistance <span class="hl-orange">4,21 €</span> (ex-plus-haut Fév. 2026) à absorber.</li>
+          <li><span class="hl-orange">Étape 2</span> : <span class="hl-orange">Fib 100 % à 5,13 €</span> — résistance psychologique majeure.</li>
+          <li>Potentiel depuis 3,675 € : <span class="hl-green">+66 %</span> vers l'objectif 6,09 €.</li>
         </ul>
       </div>
 
       <div class="analysis-card">
         <div class="analysis-card-title"><span class="dot dot-teal"></span>Indicateurs — contexte</div>
         <ul class="analysis-list">
-          <li><span class="hl-blue">RSI ~62</span> : pas suracheté, marge haussière disponible avant zone de résistance (70+).</li>
-          <li><span class="hl-blue">MACD positif</span> et en progression — momentum cohérent avec la sortie d'anse.</li>
+          <li><span class="hl-blue">RSI ~62</span> : pas suracheté, marge haussière disponible — cohérent avec un breakout.</li>
+          <li><span class="hl-blue">MACD positif</span> et en hausse — momentum favorable au signal.</li>
           <li>Prix au-dessus du <span class="hl-orange">Kumo Ichimoku</span> — structure haussière de fond validée.</li>
-          <li>Gros <span class="hl-blue">volume</span> visible sur les spikes — liquidité suffisante pour confirmer un breakout.</li>
+          <li>Les <span class="hl-blue">volumes</span> du breakout sont le facteur clé à observer sur la clôture hebdomadaire.</li>
         </ul>
       </div>
     </div>
@@ -343,39 +358,44 @@
     <div class="analysis-card">
       <div class="timeline">
         <div class="tl-item done">
-          <div class="tl-date">Août 2025 — Bord gauche ~4,21 €</div>
-          <div class="tl-text">Premier spike haussier, catalyseur FDA eyonis LCS — pic à ~4,21 €</div>
-          <div class="tl-sub">Départ de la tasse · Neckline établie</div>
+          <div class="tl-date">Août 2025 — Bord gauche ~3,67 €</div>
+          <div class="tl-text">Premier spike — catalyseur (FDA eyonis LCS) — pic à ~3,67 €</div>
+          <div class="tl-sub">Neckline établie · Départ de la tasse</div>
         </div>
         <div class="tl-item done">
-          <div class="tl-date">Sept.–Oct. 2025 — Fond ~1,25 €</div>
-          <div class="tl-text">Prise de profits, retour au calme — creux de la tasse formé autour de 1,25 €</div>
-          <div class="tl-sub">Fib 23,6 % à 1,409 € comme support</div>
+          <div class="tl-date">Oct. 2025 — Fond ~1,25 €</div>
+          <div class="tl-text">Prise de profits, consolidation — creux de la tasse à ~1,25 €</div>
+          <div class="tl-sub">Fib 23,6 % (1,409 €) comme support</div>
         </div>
         <div class="tl-item done">
-          <div class="tl-date">Nov. 2025 → Fév. 2026 — Paroi droite</div>
-          <div class="tl-text">Remontée progressive, accord Biocodex + FDA → retour à ~4,21 €</div>
-          <div class="tl-sub">Bord droit = bord gauche ✓ Symétrie parfaite</div>
+          <div class="tl-date">Nov. 2025 → Mars 2026 — Paroi droite</div>
+          <div class="tl-text">Remontée progressive — accord Biocodex + momentum — retour vers la neckline</div>
+          <div class="tl-sub">Pic Fév. 2026 à 4,21 € = dépassement temporaire</div>
         </div>
         <div class="tl-item done">
-          <div class="tl-date">Mars–Avril 2026 — Formation anse</div>
-          <div class="tl-text">Repli depuis 4,21 € vers ~3,0 € — support tenu sur le Golden Ratio 3,27 €</div>
-          <div class="tl-sub">Creux d'anse validé</div>
+          <div class="tl-date">Mars–Avril 2026 — Anse</div>
+          <div class="tl-text">Repli vers ~3,27 € (Golden Ratio) — support tenu proprement</div>
+          <div class="tl-sub">Anse complète · Figure finalisée</div>
         </div>
         <div class="tl-item active">
-          <div class="tl-date">Mai 2026 — Sortie d'anse ⟵ Nous sommes ici</div>
-          <div class="tl-text">Rechargement à 3,675 € (+4,55 %) — sortie de l'anse par le haut en cours</div>
-          <div class="tl-sub">Figure ~80 % complète</div>
+          <div class="tl-date">15 Mai 2026 — ⚡ BREAKOUT POTENTIEL ⟵ Nous sommes ici</div>
+          <div class="tl-text">3,675 € (+4,55 %) = cours sur la neckline — possible bougie de breakout</div>
+          <div class="tl-sub">Attendre la clôture hebdomadaire au-dessus de 3,67 € avec volumes</div>
         </div>
         <div class="tl-item soon">
-          <div class="tl-date">Prochain — Test de la neckline ~4,21 €</div>
-          <div class="tl-text">Le cours va tester la résistance rouge. Résistance à surveiller de très près</div>
-          <div class="tl-sub">Signal décisif</div>
+          <div class="tl-date">Post-breakout — Résistance 4,21 €</div>
+          <div class="tl-text">Première résistance significative après la neckline — ex-plus-haut Fév. 2026</div>
+          <div class="tl-sub">À absorber pour confirmer la dynamique</div>
+        </div>
+        <div class="tl-item soon">
+          <div class="tl-date">Post-breakout — Fib 100 % à 5,13 €</div>
+          <div class="tl-text">Résistance psychologique majeure — plus-haut historique de référence</div>
+          <div class="tl-sub">Étape 2 de la progression</div>
         </div>
         <div class="tl-item future">
-          <div class="tl-date">Objectif — Breakout &gt; 4,21 € confirmé</div>
-          <div class="tl-text">Validation figure → cible 1 : 5,13 € (Fib 100 %) · cible 2 : ~7,0–7,4 €</div>
-          <div class="tl-sub">Clôture hebdo + volumes requis</div>
+          <div class="tl-date">Objectif final — ~6,09 €</div>
+          <div class="tl-text">Projection complète de la tasse : neckline 3,67 + hauteur 2,42</div>
+          <div class="tl-sub">+66 % depuis le cours actuel</div>
         </div>
       </div>
     </div>
@@ -388,14 +408,14 @@
       <table class="scenario-table">
         <thead><tr><th>Étape</th><th>Niveau</th><th>Période</th><th>Statut</th></tr></thead>
         <tbody>
-          <tr><td>① Bord gauche tasse</td><td class="hl-red">~4,21 €</td><td>Août 2025</td><td><span class="badge badge-bull">✓ Validé</span></td></tr>
+          <tr><td>① Bord gauche</td><td class="hl-red">~3,67 €</td><td>Août 2025</td><td><span class="badge badge-bull">✓ Validé</span></td></tr>
           <tr><td>② Fond de tasse</td><td class="highlight">~1,25 €</td><td>Oct. 2025</td><td><span class="badge badge-bull">✓ Validé</span></td></tr>
-          <tr><td>③ Bord droit (paroi droite)</td><td class="hl-red">~4,21 €</td><td>Fév. 2026</td><td><span class="badge badge-bull">✓ Symétrie ✓</span></td></tr>
-          <tr><td>④ Formation anse (repli)</td><td style="color:#a78bfa;font-weight:600">~4,21 → ~3,0 €</td><td>Mars–Avr. 2026</td><td><span class="badge badge-bull">✓ Fait</span></td></tr>
-          <tr class="active"><td>⑤ Sortie anse — <strong>Nous sommes ici</strong></td><td class="highlight">3,675 € →</td><td>Mai 2026</td><td><span class="badge badge-active">▶ Actif</span></td></tr>
-          <tr><td>⑥ Breakout neckline</td><td class="hl-red">&gt; 4,21 € clôture</td><td>??</td><td><span class="badge badge-neutral">◎ À confirmer</span></td></tr>
-          <tr><td>⑦ Cible 1 — Fib 100 %</td><td class="hl-orange">5,13 €</td><td>Post breakout</td><td><span class="badge badge-neutral">◎ Étape 1</span></td></tr>
-          <tr><td>⑧ Cible 2 — Projection</td><td class="hl-green">~7,0–7,4 €</td><td>Post breakout</td><td><span class="badge badge-bull">🎯 Si figure réalisée</span></td></tr>
+          <tr><td>③ Paroi droite</td><td class="hl-red">→ ~3,67 €</td><td>Nov. 2025–Mars 2026</td><td><span class="badge badge-bull">✓ Fait</span></td></tr>
+          <tr><td>④ Anse</td><td style="color:#a78bfa;font-weight:600">3,67 → 3,27 → 3,67 €</td><td>Mars–Mai 2026</td><td><span class="badge badge-bull">✓ Complète</span></td></tr>
+          <tr class="active"><td>⑤ <strong>Breakout neckline</strong></td><td class="hl-red">3,675 € ← COURS</td><td>15 Mai 2026</td><td><span class="badge badge-active">⚡ En cours</span></td></tr>
+          <tr><td>⑥ Résistance 4,21 €</td><td class="hl-orange">4,21 €</td><td>Post-breakout</td><td><span class="badge badge-neutral">◎ Étape 1</span></td></tr>
+          <tr><td>⑦ Fib 100 %</td><td class="hl-orange">5,13 €</td><td>Post-breakout</td><td><span class="badge badge-neutral">◎ Étape 2</span></td></tr>
+          <tr><td>⑧ Objectif final</td><td class="hl-green">~6,09 €</td><td>??</td><td><span class="badge badge-bull">🎯 Si figure validée</span></td></tr>
         </tbody>
       </table>
     </div>
@@ -405,17 +425,17 @@
   <div class="section">
     <div class="section-title">Points de vigilance</div>
     <div style="display:flex;flex-direction:column;gap:10px">
-      <div class="alert-box" style="border-color:rgba(240,93,93,0.25);background:rgba(240,93,93,0.06)">
-        <span style="font-size:16px;flex-shrink:0">🔴</span>
-        <span>La <strong>neckline à 4,21 €</strong> est une résistance forte testée plusieurs fois. Le breakout doit être confirmé par une <strong>clôture hebdomadaire au-dessus avec volumes</strong>. Un simple dépassement intraday ne suffit pas.</span>
+      <div class="alert-box alert-red">
+        <span style="font-size:16px;flex-shrink:0">🚨</span>
+        <span>Le cours est <strong>à la neckline maintenant</strong>. La clôture de la bougie hebdomadaire sera décisive : <strong>clôture &gt; 3,67 € avec volumes = figure validée</strong>. Ne pas se précipiter avant cette confirmation.</span>
       </div>
       <div class="alert-box">
         <span style="font-size:16px;flex-shrink:0">⚠️</span>
-        <span>Entre 3,675 € et 4,21 €, le cours doit encore parcourir <strong>~15 %</strong>. La zone <strong>4,0–4,21 €</strong> sera probablement dense en ordres de vente — prévoir une possible hésitation à ce niveau.</span>
+        <span>Après le breakout, la résistance à <strong>4,21 €</strong> (pic de Fév. 2026) sera le premier vrai test. Une consolidation à ce niveau est normale et ne remet pas en cause la figure.</span>
       </div>
       <div class="alert-box alert-blue">
         <span style="font-size:16px;flex-shrink:0">ℹ️</span>
-        <span>Support critique : <strong>3,27 € (Fib 61,8 % · Golden Ratio)</strong>. Retour et clôture hebdomadaire sous ce niveau remettrait en cause la thèse haussière. Au-dessus de 3,27 €, la structure reste intacte.</span>
+        <span>Invalidation : retour en clôture hebdomadaire sous le <strong>Golden Ratio 3,27 €</strong>. Au-dessus de ce support, la structure haussière reste intacte quelle que soit la volatilité intraday.</span>
       </div>
     </div>
   </div>
